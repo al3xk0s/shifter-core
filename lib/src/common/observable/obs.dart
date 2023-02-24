@@ -1,4 +1,4 @@
-import 'package:dart_shifter_core/src/common/observable/observable.dart';
+import 'package:shifter_core/src/common/observable/observable.dart';
 
 abstract class IReadonlyObs<T> {
   T get value;

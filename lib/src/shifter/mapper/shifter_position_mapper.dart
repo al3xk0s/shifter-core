@@ -1,5 +1,5 @@
-import 'package:dart_shifter_core/src/shifter/models/gear.dart';
-import 'package:dart_shifter_core/src/shifter/models/shifter_position.dart';
+import 'package:shifter_core/src/shifter/models/gear.dart';
+import 'package:shifter_core/src/shifter/models/shifter_position.dart';
 
 abstract class IShifterPositionMapper {
   bool isGear(ShifterPosition position);

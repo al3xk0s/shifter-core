@@ -1,11 +1,11 @@
 // ignore_for_file: curly_braces_in_flow_control_structures
 
-import 'package:dart_shifter_core/src/common/observable/obs.dart';
-import 'package:dart_shifter_core/src/shifter/core/shifter_core.dart';
-import 'package:dart_shifter_core/src/shifter/models/direction.dart';
-import 'package:dart_shifter_core/src/shifter/models/gear.dart';
-import 'package:dart_shifter_core/src/shifter/models/shifter_event.dart';
-import 'package:dart_shifter_core/src/shifter/models/shifter_position.dart';
+import 'package:shifter_core/src/common/observable/obs.dart';
+import 'package:shifter_core/src/shifter/core/shifter_core.dart';
+import 'package:shifter_core/src/shifter/models/direction.dart';
+import 'package:shifter_core/src/shifter/models/gear.dart';
+import 'package:shifter_core/src/shifter/models/shifter_event.dart';
+import 'package:shifter_core/src/shifter/models/shifter_position.dart';
 
 abstract class IShifter {
   bool get isActive;

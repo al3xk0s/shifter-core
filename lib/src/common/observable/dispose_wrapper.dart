@@ -1,4 +1,4 @@
-import 'package:dart_shifter_core/src/common/observable/observable.dart';
+import 'package:shifter_core/src/common/observable/observable.dart';
 
 class DisposeWrapper {
   final Set<Disposer> _disposers = {};

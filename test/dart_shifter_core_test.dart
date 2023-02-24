@@ -1,4 +1,4 @@
-import 'package:dart_shifter_core/dart_shifter_core.dart';
+import 'package:shifter_core/shifter_core.dart';
 import 'package:test/test.dart';
 
 import 'motion_case_data.dart';

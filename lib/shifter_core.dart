@@ -1,7 +1,7 @@
 /// Support for doing something awesome.
 ///
 /// More dartdocs go here.
-library dart_shifter_core;
+library shifter_core;
 
 export 'src/common/observable/dispose_wrapper.dart';
 export 'src/common/observable/extentions/map_extention.dart';

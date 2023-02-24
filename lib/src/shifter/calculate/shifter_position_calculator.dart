@@ -1,5 +1,5 @@
-import 'package:dart_shifter_core/src/shifter/models/direction.dart';
-import 'package:dart_shifter_core/src/shifter/models/shifter_position.dart';
+import 'package:shifter_core/src/shifter/models/direction.dart';
+import 'package:shifter_core/src/shifter/models/shifter_position.dart';
 
 abstract class IShifterPositionCalculator {
   ShifterPosition calculate(Direction direction, ShifterPosition from);

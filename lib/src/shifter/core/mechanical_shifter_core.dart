@@ -1,9 +1,9 @@
-import 'package:dart_shifter_core/src/shifter/calculate/shifter_gear_calculator.dart';
-import 'package:dart_shifter_core/src/shifter/core/shifter_core.dart';
-import 'package:dart_shifter_core/src/shifter/mapper/shifter_position_mapper.dart';
-import 'package:dart_shifter_core/src/shifter/models/direction.dart';
-import 'package:dart_shifter_core/src/shifter/models/shifter_position.dart';
-import 'package:dart_shifter_core/src/shifter/models/gear.dart';
+import 'package:shifter_core/src/shifter/calculate/shifter_gear_calculator.dart';
+import 'package:shifter_core/src/shifter/core/shifter_core.dart';
+import 'package:shifter_core/src/shifter/mapper/shifter_position_mapper.dart';
+import 'package:shifter_core/src/shifter/models/direction.dart';
+import 'package:shifter_core/src/shifter/models/shifter_position.dart';
+import 'package:shifter_core/src/shifter/models/gear.dart';
 
 class MechanicalShifterCore implements IShifterCore {
   MechanicalShifterCore({

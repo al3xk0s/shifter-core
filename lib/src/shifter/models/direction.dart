@@ -1,4 +1,4 @@
-import 'package:dart_shifter_core/src/shifter/models/shifter_event.dart';
+import 'package:shifter_core/src/shifter/models/shifter_event.dart';
 
 enum Direction {
   forward,

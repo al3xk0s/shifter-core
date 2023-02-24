@@ -1,7 +1,7 @@
-import 'package:dart_shifter_core/src/common/observable/extentions/map_extention.dart';
-import 'package:dart_shifter_core/src/shifter/mapper/five_peak_position_mapper.dart';
-import 'package:dart_shifter_core/src/shifter/models/shifter_position.dart';
-import 'package:dart_shifter_core/src/shifter/models/gear.dart';
+import 'package:shifter_core/src/common/observable/extentions/map_extention.dart';
+import 'package:shifter_core/src/shifter/mapper/five_peak_position_mapper.dart';
+import 'package:shifter_core/src/shifter/models/shifter_position.dart';
+import 'package:shifter_core/src/shifter/models/gear.dart';
 
 class SixPeakPositionMapper extends FivePeakPositionMapperBase {
   @override
