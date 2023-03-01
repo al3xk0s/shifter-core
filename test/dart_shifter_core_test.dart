@@ -38,28 +38,28 @@ void unlockedSwitchGroupTestExecutor() {
       Gear.neutral,
       ShifterEvent.forward,
       Gear.third,
-      ShifterPosition(VerticalPosition.up, HorizontalPosition(3)),
+      ShifterPosition(VerticalPosition.up, HorizontalPosition(1)),
     ),
 
     MotionCaseData(
       Gear.neutral,
       ShifterEvent.back,
       Gear.fourth,
-      ShifterPosition(VerticalPosition.down, HorizontalPosition(3)),
+      ShifterPosition(VerticalPosition.down, HorizontalPosition(1)),
     ),
 
     MotionCaseData(
       Gear.neutral,
       ShifterEvent.left,
       Gear.undefined,
-      ShifterPosition(VerticalPosition.middle, HorizontalPosition(2)),
+      ShifterPosition(VerticalPosition.middle, HorizontalPosition(0)),
     ),
 
     MotionCaseData(
       Gear.neutral,
       ShifterEvent.right,
       Gear.undefined,
-      ShifterPosition(VerticalPosition.middle, HorizontalPosition(4)),
+      ShifterPosition(VerticalPosition.middle, HorizontalPosition(2)),
     ),
   ];
 
@@ -82,7 +82,7 @@ void lockedSwitchGroupTestExecutor() {
       Gear.neutral,
       ShifterEvent.forward,
       Gear.neutral,
-      ShifterPosition(VerticalPosition.middle, HorizontalPosition(3)),
+      ShifterPosition(VerticalPosition.middle, HorizontalPosition(1)),
   );
 
   final notActive = baseData.copy(isActive: false, isLocked: false);

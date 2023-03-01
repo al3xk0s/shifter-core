@@ -23,18 +23,18 @@ abstract class _BasePosition {
 }
 
 class VerticalPosition extends _BasePosition {
-  const VerticalPosition._(int value) : super(1, 3, value);
+  const VerticalPosition._(int value) : super(0, 2, value);
 
   VerticalPosition next() => VerticalPosition._(_getFixedValue(value + 1));
   VerticalPosition previous() => VerticalPosition._(_getFixedValue(value - 1));
 
-  static const VerticalPosition up = VerticalPosition._(3);
-  static const VerticalPosition middle = VerticalPosition._(2);
-  static const VerticalPosition down = VerticalPosition._(1);
+  static const VerticalPosition up = VerticalPosition._(2);
+  static const VerticalPosition middle = VerticalPosition._(1);
+  static const VerticalPosition down = VerticalPosition._(0);
 }
 
 class HorizontalPosition extends _BasePosition {
-  const HorizontalPosition(int value) : super(1, 10, value);
+  const HorizontalPosition(int value) : super(0, 10, value);
 
   HorizontalPosition next() => HorizontalPosition(_getFixedValue(value + 1));
   HorizontalPosition previous() => HorizontalPosition(_getFixedValue(value - 1));
