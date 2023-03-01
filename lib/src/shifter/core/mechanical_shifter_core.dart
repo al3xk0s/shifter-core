@@ -24,7 +24,9 @@ class MechanicalShifterCore implements IShifterCore {
   @override
   ShifterPosition get position => _position;
 
+  @override
   final IShifterPositionMapper mapper;
+  
   final IShifterGearCalculator calculator;
 
   @override

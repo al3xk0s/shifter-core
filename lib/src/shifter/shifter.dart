@@ -2,6 +2,7 @@
 
 import 'package:shifter_core/src/common/observable/obs.dart';
 import 'package:shifter_core/src/shifter/core/shifter_core.dart';
+import 'package:shifter_core/src/shifter/mapper/shifter_position_mapper.dart';
 import 'package:shifter_core/src/shifter/models/direction.dart';
 import 'package:shifter_core/src/shifter/models/gear.dart';
 import 'package:shifter_core/src/shifter/models/shifter_event.dart';
@@ -17,6 +18,8 @@ abstract class IShifter {
   void setCore(IShifterCore newCore);
 
   void handleShifterEvent(ShifterEvent event);
+
+  IShifterPositionMapper get mapper;
 }
 
 class Shifter implements IShifter {
@@ -64,4 +67,7 @@ class Shifter implements IShifter {
     gear.setValue(_core.gear);
     position.setValue(_core.position);
   }
+  
+  @override
+  IShifterPositionMapper get mapper => _core.mapper;
 }
