@@ -3,7 +3,6 @@
 import 'package:shifter_core/src/common/observable/obs.dart';
 import 'package:shifter_core/src/shifter/core/shifter_core.dart';
 import 'package:shifter_core/src/shifter/mapper/shifter_position_mapper.dart';
-import 'package:shifter_core/src/shifter/models/direction.dart';
 import 'package:shifter_core/src/shifter/models/gear.dart';
 import 'package:shifter_core/src/shifter/models/shifter_event.dart';
 import 'package:shifter_core/src/shifter/models/shifter_position.dart';
@@ -17,7 +16,7 @@ abstract class IShifter {
 
   void setCore(IShifterCore newCore);
 
-  void handleShifterEvent(ShifterEvent event);
+  void handleShifterEvent(IShifterEvent event);
 
   IShifterPositionMapper get mapper;
 }
@@ -49,17 +48,8 @@ class Shifter implements IShifter {
   bool get isLocked => _core.isLocked;
 
   @override
-  void handleShifterEvent(ShifterEvent event) {
-    final direction = getDirectionAtEvent(event);
-    if(direction != null) _core.handleDirection(direction);
-
-    else if(event == ShifterEvent.take) _core.setActive(true);
-    else if(event == ShifterEvent.dismiss) _core.setActive(false);
-    else if(event == ShifterEvent.lock) _core.setLocked(true);
-    else if(event == ShifterEvent.unlock) _core.setLocked(false);
-
-    else throw Exception("Unknown shifter event");
-
+  void handleShifterEvent(IShifterEvent event) {
+    event.apply(_core);
     _updateObsValues();
   }
 

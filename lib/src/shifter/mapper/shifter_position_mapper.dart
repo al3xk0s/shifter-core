@@ -3,6 +3,7 @@ import 'package:shifter_core/src/shifter/models/shifter_position.dart';
 
 abstract class IShifterPositionMapper {
   bool isGear(ShifterPosition position);
+  bool hasGear(Gear gear);
   ShifterPosition mapGear(Gear gear);
   Gear mapPosition(ShifterPosition position);
 }
@@ -11,6 +12,12 @@ abstract class ShifterPositionMapperBase implements IShifterPositionMapper {
   @override
   bool isGear(ShifterPosition position) {
     return targetMap.containsKey(position);
+  }
+
+  @override
+  bool hasGear(Gear gear) {
+    if(gear == Gear.undefined) throw _getException(gear);
+    return targetMap.containsValue(gear);
   }
 
   @override

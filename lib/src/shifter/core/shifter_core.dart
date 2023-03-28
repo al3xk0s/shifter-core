@@ -10,6 +10,7 @@ abstract class IShifterCore {
   void setLocked(bool newLocked);
   void setActive(bool newActive);
 
+  void trySetPosition(ShifterPosition newPosition, Gear newGear);
   void handleDirection(Direction direction);
 
   ShifterPosition get position;

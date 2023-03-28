@@ -23,8 +23,8 @@ class ShifterPositionCalculator implements IShifterPositionCalculator {
   
   @override
   ShifterPosition calculate(Direction direction, ShifterPosition from) {
-    if(direction == Direction.forward) return onForward(from);
-    if(direction == Direction.back) return onBack(from);
+    if(direction == Direction.up) return onForward(from);
+    if(direction == Direction.down) return onBack(from);
     if(direction == Direction.left) return onLeft(from);
     if(direction == Direction.right) return onRight(from);
 

@@ -47,6 +47,12 @@ class MechanicalShifterCore implements IShifterCore {
     if(!isLocked) return setActive(_isActive);
   }
 
+  @override
+  void trySetPosition(ShifterPosition newPosition, Gear newGear) {
+    if(!isActive) return;
+    _trySetPosition(newPosition, newGear);
+  }
+
   void _trySetPosition(ShifterPosition newPosition, Gear newGear) {
     if(isLocked) return;
     _position = newPosition;
@@ -55,11 +61,9 @@ class MechanicalShifterCore implements IShifterCore {
 
   @override
   void handleDirection(Direction direction) {
-    if(!isActive) return;
-
     final posPair = calculator.calculate(direction, position);
     final newGear = posPair.gear ?? _gear;
-    _trySetPosition(posPair.position, newGear);
+    trySetPosition(posPair.position, newGear);
   }
 
   void _resetUndefinedPosition() {
