@@ -4,7 +4,7 @@ import 'package:shifter_core/src/shifter/models/shifter_position.dart';
 
 class MotionCaseData {
   final Gear initial;
-  final IShifterEvent event;
+  final ShifterEvent event;
   final Gear expectedGear;
   final ShifterPosition expectedPosition;
   final int repeat;
@@ -23,7 +23,7 @@ class MotionCaseData {
 
   MotionCaseData copy({
     Gear? initial,
-    IShifterEvent? event,
+    ShifterEvent? event,
     Gear? expectedGear,
     ShifterPosition? expectedPosition,
     int? repeat,

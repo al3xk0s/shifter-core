@@ -14,20 +14,20 @@ void main() {
 automaticSwitchGroupTestExecutor() {
   test('to neutral on dismiss unlocked', () {
     final shifter = createShifter(Gear.neutral, isActive: true, isLocked: false);
-    shifter.handleShifterEvent(IShifterEvent.left);
+    shifter.handleShifterEvent(ShifterEvent.left);
     expect(shifter.gear.value, Gear.undefined);
-    shifter.handleShifterEvent(IShifterEvent.dismiss);
+    shifter.handleShifterEvent(ShifterEvent.dismiss);
     expect(shifter.gear.value, Gear.neutral);
   });
 
   test('on locked dismiss', () {
     final shifter = createShifter(Gear.neutral, isActive: true, isLocked: false);
-    shifter.handleShifterEvent(IShifterEvent.left);
+    shifter.handleShifterEvent(ShifterEvent.left);
     expect(shifter.gear.value, Gear.undefined);
-    shifter.handleShifterEvent(IShifterEvent.lock);
-    shifter.handleShifterEvent(IShifterEvent.dismiss);
+    shifter.handleShifterEvent(ShifterEvent.lock);
+    shifter.handleShifterEvent(ShifterEvent.dismiss);
     expect(shifter.gear.value, Gear.undefined);
-    shifter.handleShifterEvent(IShifterEvent.unlock);
+    shifter.handleShifterEvent(ShifterEvent.unlock);
     expect(shifter.gear.value, Gear.neutral);
   });
 }
@@ -36,28 +36,28 @@ void unlockedSwitchGroupTestExecutor() {
   final notOverflowedData = [
     MotionCaseData(
       Gear.neutral,
-      IShifterEvent.up,
+      ShifterEvent.up,
       Gear.third,
       ShifterPosition(VerticalPosition.up, HorizontalPosition(1)),
     ),
 
     MotionCaseData(
       Gear.neutral,
-      IShifterEvent.down,
+      ShifterEvent.down,
       Gear.fourth,
       ShifterPosition(VerticalPosition.down, HorizontalPosition(1)),
     ),
 
     MotionCaseData(
       Gear.neutral,
-      IShifterEvent.left,
+      ShifterEvent.left,
       Gear.undefined,
       ShifterPosition(VerticalPosition.middle, HorizontalPosition(0)),
     ),
 
     MotionCaseData(
       Gear.neutral,
-      IShifterEvent.right,
+      ShifterEvent.right,
       Gear.undefined,
       ShifterPosition(VerticalPosition.middle, HorizontalPosition(2)),
     ),
@@ -80,7 +80,7 @@ void unlockedSwitchGroupTestExecutor() {
 void lockedSwitchGroupTestExecutor() {
   final baseData = MotionCaseData(
       Gear.neutral,
-      IShifterEvent.up,
+      ShifterEvent.up,
       Gear.neutral,
       ShifterPosition(VerticalPosition.middle, HorizontalPosition(1)),
   );

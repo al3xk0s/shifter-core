@@ -16,7 +16,7 @@ abstract class IShifter {
 
   void setCore(IShifterCore newCore);
 
-  void handleShifterEvent(IShifterEvent event);
+  void handleShifterEvent(ShifterEvent event);
 
   IShifterPositionMapper get mapper;
 }
@@ -48,7 +48,7 @@ class Shifter implements IShifter {
   bool get isLocked => _core.isLocked;
 
   @override
-  void handleShifterEvent(IShifterEvent event) {
+  void handleShifterEvent(ShifterEvent event) {
     event.apply(_core);
     _updateObsValues();
   }
