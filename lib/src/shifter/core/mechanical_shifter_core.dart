@@ -22,6 +22,12 @@ class MechanicalShifterCore implements IShifterCore {
   Gear get gear => _gear;
 
   @override
+  int get id => 0;
+
+  @override
+  String get name => 'mechanical';
+
+  @override
   ShifterPosition get position => _position;
 
   @override

@@ -1,9 +1,11 @@
+import 'package:shifter_core/src/common/entity.dart';
+import 'package:shifter_core/src/shifter/core/mechanical_shifter_core.dart';
 import 'package:shifter_core/src/shifter/mapper/shifter_position_mapper.dart';
 import 'package:shifter_core/src/shifter/models/direction.dart';
 import 'package:shifter_core/src/shifter/models/gear.dart';
 import 'package:shifter_core/src/shifter/models/shifter_position.dart';
 
-abstract class IShifterCore {
+abstract class IShifterCore implements IEntity {
   bool get isActive;
   bool get isLocked;
 

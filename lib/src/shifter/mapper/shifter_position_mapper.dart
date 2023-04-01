@@ -2,13 +2,32 @@ import 'package:shifter_core/src/shifter/models/gear.dart';
 import 'package:shifter_core/src/shifter/models/shifter_position.dart';
 
 abstract class IShifterPositionMapper {
+  int get id;
+  String get name;
+
   bool isGear(ShifterPosition position);
   bool hasGear(Gear gear);
   ShifterPosition mapGear(Gear gear);
   Gear mapPosition(ShifterPosition position);
+
+  Map<ShifterPosition, Gear> toMap();
 }
 
-abstract class ShifterPositionMapperBase implements IShifterPositionMapper {
+class ShifterPositionMapper implements IShifterPositionMapper {
+  const ShifterPositionMapper({
+    required this.id,
+    required this.name,
+    required this.targetMap,
+  });
+
+  @override
+  final int id;
+
+  @override
+  final String name;
+
+  final Map<ShifterPosition, Gear> targetMap;
+
   @override
   bool isGear(ShifterPosition position) {
     return targetMap.containsKey(position);
@@ -40,9 +59,6 @@ abstract class ShifterPositionMapperBase implements IShifterPositionMapper {
     return targetMap[position]!;
   }
 
-  Map<ShifterPosition, Gear> getPositionGearMap();
-
-  Map<ShifterPosition, Gear> get targetMap => _map ??= getPositionGearMap();
-
-  Map<ShifterPosition, Gear>? _map;
+  @override
+  Map<ShifterPosition, Gear> toMap() => targetMap;
 }

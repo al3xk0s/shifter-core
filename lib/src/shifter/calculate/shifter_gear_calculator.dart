@@ -1,3 +1,4 @@
+import 'package:shifter_core/src/common/entity.dart';
 import 'package:shifter_core/src/shifter/calculate/shifter_position_calculator.dart';
 import 'package:shifter_core/src/shifter/mapper/shifter_position_mapper.dart';
 import 'package:shifter_core/src/shifter/models/direction.dart';

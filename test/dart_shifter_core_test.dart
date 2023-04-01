@@ -97,7 +97,7 @@ void lockedSwitchGroupTestExecutor() {
 }
 
 IShifter createShifter(Gear initial, {bool isActive = false, bool isLocked = true}) {
-  final mapper = FivePeakPositionMapper();
+  final mapper = fivePeakPositionMapper;
   final gearCaclulator = ShifterGearCalculator(mapper,  const ShifterPositionCalculator());
   final core = MechanicalShifterCore(
     mapper: mapper,

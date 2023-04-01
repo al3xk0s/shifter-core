@@ -31,6 +31,11 @@ class VerticalPosition extends _BasePosition {
   static const VerticalPosition up = VerticalPosition._(2);
   static const VerticalPosition middle = VerticalPosition._(1);
   static const VerticalPosition down = VerticalPosition._(0);
+
+  factory VerticalPosition(int value) {
+    const map = [ down, middle, up ];
+    return map[value];
+  }
 }
 
 class HorizontalPosition extends _BasePosition {
